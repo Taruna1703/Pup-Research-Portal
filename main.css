@@ -32,3 +32,8 @@
 	position: relative;
 	left: 400px;
 }
+@media print {
+  #print {
+    display: none;
+  }
+}

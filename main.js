@@ -63,6 +63,7 @@
       document.getElementById("c_address").value = "";
     }  
      }
+     //lock and unlock form
   $(function() {
     unlock_form();
       $("#defaultCheck2").click(unlock_form);
@@ -74,3 +75,15 @@
     $("input.defaultCheck2").attr("disabled", true);
   }
   }
+  //hide button while printing
+  function myFunction() {
+        //Get the print button and put it into a variable
+        var printButton = document.getElementById("print");
+        //Set the print button visibility to 'hidden' 
+        print.style.visibility = 'hidden';
+        //Print the page content
+        window.print()
+        printButton.style.visibility = 'visible';
+}
+
+
