@@ -19,7 +19,42 @@
        <img src="index_01.gif"  alt="">
        </a>
     </nav>
-   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">PREFRENCES</a>
+              </li>
+              <li class="nav-item">
+                   <a class="nav-link" href="#">CANDIDATES</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">FACULTY</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">DEPARTMENT</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">SUPERVISOR</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">ENROLLMENT</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="search.html">SEARCH</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">NOTICES</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">BACKUP</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
     <div class="container">
     <form action="signupdatabase.php" method="post" enctype="multipart/form-data">
     <div id="reg-no">
@@ -122,7 +157,14 @@
                 <div class="col-auto">
                   <label for="Correspondance Address">Correspondance Address</label>
                 </div>
-               
+                <div class="col-auto">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onclick="return auto_fill_address();">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Same as Permanent Address
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="form-row">
                  <div class="col-4 col-padding">
@@ -202,15 +244,21 @@
              <!--<input type="file" name="slider">-->
              <input type="file" class="form-control-file" id="exampleFormControlFile1" name="profile_pic">
           </div>
-         
+           <input type="submit" class="btn btn-primary btn-lg btn-block" id="btnaling" name="ss" value="Submit">
+          <!--<input type="submit" class="btn btn-primary btn-lg btn-block" name="">Submit</button> -->
     </div>
   </form>
-  <form>
+  <form action="signupdatabase.php" method="post" enctype="multipart/form-data">
     <div class="Registration-Information">
       <div>
         <div class="alert alert-dark" role="alert">
             <a href="#" class="alert-link">REGISTRATION INFORMATION</a>
-           
+            <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                      Already Registered?
+                    </label>
+            </div>
         </div>
       </div>
     
@@ -218,21 +266,21 @@
       <div class="form-row">
          <div class="form-group col-md-6">
             <label for="Faculty">Faculty</label>
-            <input type="text" class="form-control" id="Faculty" placeholder="Faculty" name="faculty" >
+            <input type="text" class="form-control defaultCheck2" id="Faculty" placeholder="Faculty" name="faculty" disabled>
          </div>
          <div class="form-group col-md-6">
             <label for="Department">Department</label>
-            <input type="text" class="form-control" id="Department" placeholder="Department" name="depart" >
+            <input type="text" class="form-control defaultCheck2" id="Department" placeholder="Department" name="depart" disabled>
          </div>
       </div>
       <div class="form-row">
          <div class="form-group col-md-6">
             <label for="Extempted from fee">Extempted from fee</label>
-            <input type="text" class="form-control" id="Extempted from fee" placeholder="Extempted from fee" name="extempted_from_fee" >
+            <input type="text" class="form-control defaultCheck2" id="Extempted from fee" placeholder="Extempted from fee" name="extempted_from_fee" disabled>
          </div>
          <div class="form-group col-md-6">
             <label for="exampleFormControlSelect1">JRF Holder</label>
-             <select class="form-control" id="exampleFormControlSelect1" name="jrf_holder" >
+             <select class="form-control defaultCheck2" id="exampleFormControlSelect1" name="jrf_holder" disabled>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
              </select>
@@ -241,24 +289,24 @@
       <div class="form-row">
          <div class="form-group col-md-6">
             <label for="Supervisor">Supervisor</label>
-            <input type="text" class="form-control" id="Supervisor" placeholder="Supervisor" name="supervisor"  >
+            <input type="text" class="form-control defaultCheck2" id="Supervisor" placeholder="Supervisor" name="supervisor"  disabled>
          </div>
          <div class="form-group col-md-6">
             <label for="Select Co-Supervisor">Select Co-Supervisor</label>
-            <input type="text" class="form-control" id="Select Co-Supervisor" placeholder="Select Co-Supervisor" name="co_supervisor" >
+            <input type="text" class="form-control defaultCheck2" id="Select Co-Supervisor" placeholder="Select Co-Supervisor" name="co_supervisor" disabled>
          </div>
       </div>
       <div class="form-row">
           <div class="form-group col-md-6">
             <label for="exampleFormControlSelect1">Mode of Phd</label>
-             <select class="form-control" id="exampleFormControlSelect1" name="mode_of_phd" >
+             <select class="form-control defaultCheck2" id="exampleFormControlSelect1" name="mode_of_phd" disabled>
                 <option value="Regular">Regular</option>
                 <option value="Part Time">Part Time</option>
              </select>
           </div>
            <div class="form-group col-md-6">
             <label for="exampleFormControlSelect1">Is course work done?</label>
-             <select class="form-control" id="exampleFormControlSelect1" name="course_work" >
+             <select class="form-control defaultCheck2" id="exampleFormControlSelect1" name="course_work" disabled>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
              </select>
@@ -267,68 +315,90 @@
        <div class="form-row">
                  <div class="col-6 col-padding">
                     <label for="University Registration Number">University Registration Number</label>
-                    <input type="text" class="form-control" placeholder="University Registration Number" name="uni_reg_no" >
+                    <input type="text" class="form-control defaultCheck2" placeholder="University Registration Number" name="uni_reg_no" disabled>
                  </div>
                  <div class="col-6 col-padding">
                     <label for="Fellowship Id">Fellowship Id</label>
-                    <input type="text" class="form-control" placeholder="Fellowship Id" name="fellowship_id" >
+                    <input type="text" class="form-control defaultCheck2" placeholder="Fellowship Id" name="fellowship_id" disabled>
                  </div>             
        </div>
        <div class="form-row">
           <div class="col-12 col-padding">
                     <label for="Research Title">Research Title</label>
-                    <input type="text" class="form-control" placeholder="Research Title" name="research_titles" >
+                    <input type="text" class="form-control defaultCheck2" placeholder="Research Title" name="research_titles" disabled>
           </div>           
        </div>
      
     </div>
+     <input type="submit" class="btn btn-primary btn-lg btn-block defaultCheck2" disabled id="btnaling" name="ss1" value="Submit">
+    
+    <!--<button type="button" class="btn btn-primary btn-lg btn-block defaultCheck2" disabled>Submit</button>-->
+    </form>
+    <form action="signupdatabase.php" method="post" enctype="multipart/form-data">
     <div class="Upload Thesis">
       <div>
         <div class="alert alert-dark" role="alert">
             <a href="#" class="alert-link">Upload Thesis</a>
+            <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                      Candidate information filled?
+                    </label>
+            </div>
         </div>
       </div>
+      <div id="reg-no">
+        <div class="form-group row">
+             <label for="inputregno" class="col-sm-2 col-form-label">Registration Number</label>
+             <div class="col-sm-10">
+                 <input type="text" name="reg_no" class="form-control" id="inputregno" placeholder="Registration Number">
+             </div>
+             <div class="invalid-feedback">
+                Please choose a Registration Number.
+            </div>
+        </div>    
       
+    </div>
         <div class="form-row">
                  <div class="col-6 col-padding">
                     <label for="University Name">University Name</label>
-                    <input type="text" class="form-control" placeholder="Punjabi University,Patiala" value="Punjabi University,Patiala" name="uni_name" readonly >
+                    <input type="text" class="form-control defaultCheck3" placeholder="Punjabi University,Patiala" value="Punjabi University,Patiala" name="uni_name" readonly disabled>
                  </div>
                  <div class="col-6 col-padding">
                     <label for="Department/Place">Department/Place</label>
-                    <input type="text" class="form-control" placeholder="Department/Place" name="department_place" >
+                    <input type="text" class="form-control defaultCheck3" placeholder="Department/Place" name="department_place" disabled>
                  </div>             
        </div>
        <div class="form-row">
                  <div class="col-6 col-padding">
                     <label for="Name of Researcher">Name of Researcher</label>
-                    <input type="text" class="form-control" placeholder="e.g. Ghandhi M.K" name="name_of_research" >
+                    <input type="text" class="form-control defaultCheck3" placeholder="e.g. Ghandhi M.K" name="name_of_research" disabled>
                  </div>
                  <div class="col-6 col-padding">
                     <label for="Name of Guide">Name of Guide</label>
-                    <input type="text" class="form-control" placeholder="Don't Use Dr./Prof" name="guide_name" >
+                    <input type="text" class="form-control defaultCheck3" placeholder="Don't Use Dr./Prof" name="guide_name" disabled>
                  </div>             
        </div>
         <div class="form-row">
                  <div class="col-6 col-padding">
                     <label for="Type of Degree">Type of Degree</label>
-                    <input type="text" class="form-control" value="Phd" readonly name="type_of_degree" >
+                    <input type="text" class="form-control defaultCheck3" value="Phd" readonly name="type_of_degree" disabled>
                  </div>
                  <div class="col-6">
                    <label for="Date Picker">Date of Birth</label>
-                   <input type="date" class="form-control" >
-                    <!--<input id="datepicker2" value="<?php echo date("Y-m-d");?>">-->
+                   <input type="date" class="form-control defaultCheck3" disabled>
+                    <!--<input id="datepicker2" value="<?php// echo date("Y-m-d");?>">-->
             </div>     
        </div>
         <div class="form-row">
                  <div class="col-6">
                     <label for="Date Picker">Awarded Date</label>
-                    <input type="date" class="form-control" name="awarded_date" >
-                    <!--<input id="datepicker3" name="awarded_date" value="<?php echo date("Y-m-d");?>">-->
+                    <input type="date" class="form-control defaultCheck3" name="awarded_date" disabled>
+                    <!--<input id="datepicker3" name="awarded_date" value="<?php //echo date("Y-m-d");?>">-->
                  </div>   
                  <div class="col-6 col-padding">
                     <label for="Completed date">Completed date</label>
-                     <select class="form-control" id="exampleFormControlSelect1" name="completed_date" >
+                     <select class="form-control defaultCheck3" id="exampleFormControlSelect1" name="completed_date" disabled>
                       <option value="1980">1980</option>
                       <option value="1981">1981</option>
                       <option value="1982">1982</option>
@@ -374,22 +444,45 @@
        </div>
       
     </div>
+     <input type="submit" class="btn btn-primary btn-lg btn-block defaultCheck3" id="btnaling" name="ss2" value="Submit" disabled>
+    <!--<button type="button" class="btn btn-primary btn-lg btn-block defaultCheck3" disabled>Submit</button>-->
+    </form>
+    <form action="signupdatabase.php" method="post" enctype="multipart/form-data">
     <div class="Thesis-Details">
       <div>
         <div class="alert alert-dark" role="alert">
             <a href="#" class="alert-link">Thesis Details</a>
+            <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                    <label class="form-check-label" for="defaultCheck4">
+                      Ready for filling Thesis Details?
+                    </label>
+            </div>
         </div>
       </div>
+      <div id="reg-no">
+        <div class="form-group row">
+             <label for="inputregno" class="col-sm-2 col-form-label">Registration Number</label>
+             <div class="col-sm-10">
+                 <input type="text" name="reg_no" class="form-control" id="inputregno" placeholder="Registration Number">
+             </div>
+             <div class="invalid-feedback">
+                Please choose a Registration Number.
+            </div>
+        </div>
+       
+      
+    </div>
        
        <div class="form-row">
           <div class="col-12 col-padding">
                     <label for="Title">Title (With Subtitle)</label>
-                    <input type="text" class="form-control" placeholder="Title" name="title" >
+                    <input type="text" class="form-control defaultCheck4" placeholder="Title" name="title" disabled>
           </div>           
        </div>
        <div class="form-group">
            <label for="exampleFormControlTextarea1">Abstract</label>
-           <textarea class="form-control" id="Abstract" rows="5" maxlength="2048" name="abstract" ></textarea>
+           <textarea class="form-control defaultCheck4" id="Abstract" rows="5" maxlength="2048" name="abstract" disabled></textarea>
            <small id="passwordHelpBlock" class="form-text text-muted">Max Characters: 2048</small>
        </div>
        <div class="form-group">
@@ -399,31 +492,31 @@
            </div>
           <div class="form-row">
              <div class="col-12 col-padding">
-               <input type="text" class="form-control" placeholder="Select" name="first_level_of_subject" >
+               <input type="text" class="form-control defaultCheck4" placeholder="Select" name="first_level_of_subject" disabled>
              </div>            
           </div>
           <div class="form-row">
              <div class="col-12 col-padding">
-               <input type="text" class="form-control" placeholder="Select" name="second_level_of_subject" >
+               <input type="text" class="form-control defaultCheck4" placeholder="Select" name="second_level_of_subject" disabled>
              </div>            
           </div>
           <div class="form-row">
              <div class="col-12 col-padding">
-               <input type="text" class="form-control" placeholder="Select" name="third_level_of_subject" >
+               <input type="text" class="form-control defaultCheck4" placeholder="Select" name="third_level_of_subject" disabled>
              </div>            
           </div>
          </div>
          <div class="form-row">
            <label for="Language">Language</label>
-           <input type="text" class="form-control" placeholder="Language" name="language" >
+           <input type="text" class="form-control defaultCheck4" placeholder="Language" name="language" disabled>
          </div>
          <div class="form-row">
            <label for="Submitted by:">Submitted by:</label>
-           <input type="text" class="form-control" placeholder="University" name="submitted_by" >
+           <input type="text" class="form-control defaultCheck4" placeholder="University" name="submitted_by" disabled>
          </div>
          <div class="form-row">
            <label for="Copyrights:">Copyrights:</label>
-           <input type="text" class="form-control" placeholder="University" name="copyrights" >
+           <input type="text" class="form-control defaultCheck4" placeholder="University" name="copyrights" disabled>
          </div>
        </div>       
        <div class="form-row">
@@ -434,96 +527,96 @@
         <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files1 (Title)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files1" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files1" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files2 (Certificates):</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files2" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files2" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files3 (Preliminary Pages):</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1"name="files3" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1"name="files3" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files4 (Chapter1):</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files4" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files4" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files5 (Chapter2)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files5" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files5" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files6 (Chapter3)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files6" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files6" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files7 (Chapter4)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files7" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files7" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files8 (Chapter5)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files8" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files8" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files9 (Chapter6)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files9" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files9" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files10 (Chapter7)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files10" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files10" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files11 (Chapter8)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files11" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files11" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files12 (Chapter9)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files12" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files12" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files13 (Chapter10)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files13" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files13" disabled>
          </div>
        </div>
        <div class="form-row">
          <div class="col-12 col-padding">
            <label for="Upload Files">Files14 (Chapter11)</label>
-           <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files14" >
+           <input type="file" class="form-control-file defaultCheck4" id="exampleFormControlFile1" name="files14" disabled>
          </div>
        </div>
     </div>
     <div class="clearfix"></div>
-    
-    </form>
-    <div class="form-group row">
+     <div class="form-group row">
             <div class="col-sm-12 text-center">
-              <input type="submit" class="btn btn-primary btn-lg btn-block" id="print" name="print" value="Print" onclick="window.print();">
+              <input type="submit" class="btn btn-primary btn-lg btn-block defaultCheck4" id="btnaling" name="ss2" value="Submit" disabled>
             </div>
       </div>
+    </form>
+    
     </div>
     
     <!-- Optional JavaScript -->

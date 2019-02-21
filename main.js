@@ -71,8 +71,42 @@
   function unlock_form(){
    if (this.checked) {
     $("input.defaultCheck2").removeAttr("disabled");
+    $("textarea.defaultCheck4").removeAttr("disabled");
+     $("select.defaultCheck4").removeAttr("disabled");
   } else {
     $("input.defaultCheck2").attr("disabled", true);
+     $("textarea.defaultCheck4").attr("disabled", true);
+     $("select.defaultCheck4").attr("disabled", true);
+  }
+  }
+  $(function() {
+    unlock_form1();
+      $("#defaultCheck3").click(unlock_form1);
+    });
+  function unlock_form1(){
+   if (this.checked) {
+    $("input.defaultCheck3").removeAttr("disabled");
+    $("textarea.defaultCheck4").removeAttr("disabled");
+     $("select.defaultCheck4").removeAttr("disabled");
+  } else {
+    $("input.defaultCheck3").attr("disabled", true);
+     $("textarea.defaultCheck4").attr("disabled", true);
+     $("select.defaultCheck4").attr("disabled", true);
+  }
+  }
+  $(function() {
+    unlock_form2();
+      $("#defaultCheck4").click(unlock_form2);
+    });
+  function unlock_form2(){
+   if (this.checked) {
+    $("input.defaultCheck4").removeAttr("disabled");
+    $("textarea.defaultCheck4").removeAttr("disabled");
+     $("select.defaultCheck4").removeAttr("disabled");
+  } else {
+    $("input.defaultCheck4").attr("disabled", true);
+    $("textarea.defaultCheck4").attr("disabled", true);
+     $("select.defaultCheck4").attr("disabled", true);
   }
   }
   //hide button while printing
